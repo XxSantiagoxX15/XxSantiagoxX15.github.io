@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home Barcelona crew</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #3498db, #e74c3c);
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Botones para avanzar y retroceder en el carrusel */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Al pasar el mouse sobre los botones */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Descripción del FC Barcelona */
+        .description {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Botones */
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Qué es el FC Barcelona?</h1>
+    <!-- Descripción del FC Barcelona -->
+    <div class="description">
+        <p>El FC Barcelona es un club de fútbol que fue fundado en 1899 por un grupo de jóvenes catalanes. Es uno de los clubes más históricos del mundo. Juega en la Liga Española y actualmente tiene 27 títulos de liga, que es el máximo nivel en España. Además, ha ganado 31 Copas del Rey, 5 Champions League, 14 Supercopas de España, 2 Copas de la Liga, 1 Liga Mediterránea, 1 Liga Catalana, 23 Campeonatos de Catalunya, 2 Supercopas de Catalunya, 5 Supercopas de Europa, 4 Recopas de Europa y 3 Mundiales de Clubes.</p>
+    </div>
+    <!-- Carrusel de imágenes -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="/img/capnou.webp" alt="Imagen 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="/img/masqueunclub.png" alt="Imagen 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="/img/setete.jpg.avif" alt="Imagen 3">
+        </div>
+        <!-- Botones para avanzar y retroceder -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- Botones -->
+    <a href="leyendas.html" class="button">Ver las mejores leyendas del FC Barcelona</a>
+    <a href="plantilla.html" class="button">Ver la plantilla</a>
+    <a href="estadio.html" class="button">Ver el estadio del FC Barcelona</a>
+    <!-- JavaScript para el carrusel -->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000); // Cambia la imagen cada 2 segundos
+        }
+
+        // Función para avanzar o retroceder en el carrusel
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    </script>
+</body>
+</html>
